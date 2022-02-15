@@ -32,10 +32,8 @@ class _FavPageState extends State<FavPage> {
   @override
   Widget build(BuildContext context) {
     if (loading) {
-      print('Loading...');
       return const Center(child: CircularProgressIndicator());
     } else if (_pokemons.isEmpty) {
-      print('_pokemons is empty');
       return Center(
         child: Text(
           'You have not caught any Pokemon yet!',
@@ -44,9 +42,6 @@ class _FavPageState extends State<FavPage> {
         ),
       );
     } else {
-      print('_pokemons is not empty');
-      print('Size: ${_pokemons.length}');
-      print('First: ${_pokemons[0].name}');
       return ListView.builder(
         itemCount: _pokemons.length,
         itemBuilder: (BuildContext context, int index) {
